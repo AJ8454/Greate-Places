@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:great_places/provider/great_places.dart';
+import 'package:great_places/screens/add_place_screen.dart';
 import 'package:provider/provider.dart';
 
 import 'screens/places_list_screen.dart';
@@ -16,12 +17,16 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider.value(
       value: GreatPlaces(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Greate Place',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.indigo)
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blueGrey)
               .copyWith(secondary: Colors.amber),
         ),
         home: const PlacesListScreen(),
+        routes: {
+          AddPlaceScreen.routeName: (ctx) => const AddPlaceScreen(),
+        },
       ),
     );
   }
