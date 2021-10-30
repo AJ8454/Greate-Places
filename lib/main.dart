@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blueGrey)
               .copyWith(secondary: Colors.amber),
+          scaffoldBackgroundColor: Colors.orange[100],
         ),
         home: const PlacesListScreen(),
         routes: {
